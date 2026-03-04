@@ -223,6 +223,13 @@ This helps to reduce compute/workload on the Splunk environment. You can use an 
 8. Avoid wildcards on indexed fields
 9. ...and so on
 
+# 6. Include Explicit Temporal Context
+Agents frequently misinterpret timestamps when analyzing log data, particularly around the current year. Providing explicit time context helps prevent incorrect assumptions about whether events are historical, recent, or in the future.
+For example, include a time reference in the environment context or system prompt:
+```
+The current date and time is {current_time.strftime('%Y-%m-%d %H:%M:%S')} UTC. We are currently in the year {current_year}. Any timestamps showing {current_year} are NOT future events - they are current or recent events. When analyzing temporal patterns, consider that {current_year} events are happening now or in the recent past.
+```
+
 # Final Thoughts
 
 MCP dramatically simplifies connecting AI assistants to enterprise systems, but ease of integration should not be mistaken for production readiness.
