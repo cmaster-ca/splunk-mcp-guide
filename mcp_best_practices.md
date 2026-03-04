@@ -1,4 +1,7 @@
 # Model Context Protocol Best Practices in Splunk
+
+Author: Chris Masternak, Senior Manager for AI Solution Architecture | The Americas @ Splunk
+
 Model Context Protocol (MCP) is the key integration layer between AI assistants and operational platforms such as Splunk. While MCP makes it easy to expose tools and data to large language models, production deployments require thoughtful design to avoid runaway queries, excessive resource consumption, and unpredictable behavior.
 
 The notes below come from real-world Splunk deployments but apply broadly to MCP implementations across enterprise platforms. The central challenge is consistent across environments: how to safely expose powerful operational systems to probabilistic AI models while maintaining determinism, security, and performance.
