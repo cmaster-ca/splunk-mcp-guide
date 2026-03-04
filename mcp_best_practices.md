@@ -211,8 +211,8 @@ To address this, organizations should consider **persona-specific MCP configura
 
 This prevents misuse while still enabling AI assistance.
 
-# 5. Include search best practices in the `.md` file
-This helps to reduce compute/workload on the Splunk environment. You can use an agent to generate the prompt for you here, but the usual suspects tend to be:
+# 5. Include Splunk search best practices in the `.md` file
+This helps to reduce compute/workload on the Splunk environment. You can use an agent to generate the prompt for you here, but the usual suspects for poor search performance tend to be:
 1. Always specific indexes: avoid broad searches (index=* )
 2. Time-bound every search: always restrict the time window to minimize data scanned `earliest=-24h`
 3. Filter early in the search: place the most restrictive filters early: `index=security_events sourcetype=wineventlog:security EventCode=4625` vs. `index=security_events | search EventCode=4625`
